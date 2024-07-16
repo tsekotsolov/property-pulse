@@ -1,7 +1,21 @@
-import React from "react";
+"use client";
+import { ClipLoader } from "react-spinners";
 
-const LoadingPage = () => {
-  return <div>loading...</div>;
+const LoadingPage = ({ loading }: { loading: boolean }) => {
+  return (
+    <div className="h-dvh content-center">
+      <ClipLoader
+        color="#3b82f6"
+        loading={loading}
+        size={150}
+        aria-label="Loading spinner"
+        cssOverride={{
+          display: "block",
+          margin: "0 auto",
+        }}
+      />
+    </div>
+  );
 };
 
 export default LoadingPage;
