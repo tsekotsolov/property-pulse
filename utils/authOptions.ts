@@ -33,7 +33,8 @@ export const authOptions: NextAuthOptions = {
         await User.create({
           email: profile?.email,
           username,
-          image: profile?.image,
+          //@ts-ignore picture
+          image: profile?.picture,
         });
       }
       // 4. Return true to allow sign in
