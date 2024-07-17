@@ -1,8 +1,9 @@
-import properties from "@/properties.json";
 import PropertyCard from "@/components/PropertyCard";
 import { Property } from "@/types/property.type";
+import { fetchProperties } from "@/utils/requests";
 
-const PropertiesPage = () => {
+const PropertiesPage = async () => {
+  const properties = await fetchProperties();
   return (
     <section className="px-4 py-6">
       <div className="container-xl lg:container m-auto">
