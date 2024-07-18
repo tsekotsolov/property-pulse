@@ -17,7 +17,7 @@ import {
 import { BuiltInProviderType } from "next-auth/providers/index";
 
 const Navbar = () => {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const profileImage = session?.user?.image;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -113,7 +113,7 @@ const Navbar = () => {
           </div>
 
           {/* <!-- Right Side Menu (Logged Out) --> */}
-          {!session && providers && (
+          {!session && providers && status === "unauthenticated" && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
                 {Object.values(providers).map((provider, index) => (

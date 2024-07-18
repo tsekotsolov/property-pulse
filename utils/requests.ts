@@ -22,7 +22,9 @@ const fetchProperty = async (id: string) => {
     if (!apiDomain) {
       return null;
     }
-    const response = await fetch(`${apiDomain}/properties/${id}`);
+    const response = await fetch(`${apiDomain}/properties/${id}`, {
+      cache: "no-store",
+    });
     if (!response.ok) {
       throw new Error("Something went wrong");
     }
