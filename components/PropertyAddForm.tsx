@@ -26,10 +26,14 @@ const PropertyAddForm = () => {
       email: "",
       phone: "",
     },
-    images: [] as string[],
+    images: [] as File[],
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
 
     // Check if nested property
@@ -52,9 +56,7 @@ const PropertyAddForm = () => {
       }));
     }
   };
-  const handleAmenitiesChange = (e: {
-    target: { value: any; checked: any };
-  }) => {
+  const handleAmenitiesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
 
     // Clone the current array
@@ -79,15 +81,17 @@ const PropertyAddForm = () => {
     }));
   };
 
-  const handleImageChange = (e: { target: { files: any } }) => {
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
 
     // Clone images array
     const updatedImages = [...fields.images];
 
     // Add new files to the array
-    for (const file of files) {
-      updatedImages.push(file);
+    if (files) {
+      for (const file of files) {
+        updatedImages.push(file);
+      }
     }
 
     // Update state with array of images
