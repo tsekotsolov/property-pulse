@@ -202,7 +202,7 @@ const Navbar = () => {
                       tabIndex={-1}
                       id="user-menu-item-0"
                       onClick={() => {
-                        setIsMobileMenuOpen(false);
+                        setIsProfileMenuOpen(false);
                       }}
                     >
                       Your Profile
@@ -214,7 +214,7 @@ const Navbar = () => {
                       tabIndex={-1}
                       id="user-menu-item-2"
                       onClick={() => {
-                        setIsMobileMenuOpen(false);
+                        setIsProfileMenuOpen(false);
                       }}
                     >
                       Saved Properties
