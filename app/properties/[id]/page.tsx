@@ -10,7 +10,8 @@ import Spinner from "@/components/Spinner";
 import PropertyDetails from "@/components/PropertyDetails";
 import PropertyImages from "@/components/PropertyImages";
 import PropertyContactForm from "@/components/PropertyContactForm";
-import { FaShare, FaBookmark } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
+import BookmarkButton from "@/components/BookmarkButton";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -66,15 +67,12 @@ const PropertyPage = () => {
                 <PropertyDetails property={property} />
                 {/* <!-- Sidebar --> */}
                 <aside className="space-y-4">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center">
-                    <FaBookmark className="mr-2" />
-                    Bookmark Property
-                  </button>
+                  <BookmarkButton property={property} />
                   <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center">
                     <FaShare className="fa-share mr-2" />
                     Share Property
                   </button>
-                  <PropertyContactForm property={property}/>
+                  <PropertyContactForm property={property} />
                 </aside>
               </div>
             </div>
