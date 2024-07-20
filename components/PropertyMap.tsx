@@ -46,11 +46,14 @@ const PropertyMap = ({ property }: { property: Property }) => {
 
         setLat(lat);
         setLng(lng);
-        setViewport({
-          ...viewport,
-          latitude: lat,
-          longitude: lng,
-        });
+
+        if (viewport.latitude === 0 && viewport.longitude === 0) {
+          setViewport({
+            ...viewport,
+            latitude: lat,
+            longitude: lng,
+          });
+        }
 
         setLoading(false);
       } catch (error) {
@@ -59,7 +62,6 @@ const PropertyMap = ({ property }: { property: Property }) => {
         setLoading(false);
       }
     };
-
     fetchCoords();
   }, [
     property.location.city,
