@@ -10,7 +10,6 @@ import Spinner from "@/components/Spinner";
 import PropertyDetails from "@/components/PropertyDetails";
 import PropertyImages from "@/components/PropertyImages";
 import PropertyContactForm from "@/components/PropertyContactForm";
-import { FaShare } from "react-icons/fa";
 import BookmarkButton from "@/components/BookmarkButton";
 import ShareButtons from "@/components/ShareButtons";
 
