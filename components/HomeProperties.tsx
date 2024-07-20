@@ -8,7 +8,7 @@ import Link from "next/link";
 const HomeProperties = async () => {
   const data = await fetchProperties();
 
-  const randomProperties = data.properties
+  const randomProperties = data?.properties
     ?.sort(() => Math.random() - 0.5)
     ?.slice(0, 3);
   return (

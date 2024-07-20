@@ -15,9 +15,9 @@ export const GET = async (request: NextRequest, res: NextResponse) => {
     const total = await Property.countDocuments();
 
     const properties = await Property.find({})
-      .sort({ createdAt: -1 })
-      .skip(skip)
-      .limit(+pageSize);
+      ?.sort({ createdAt: -1 })
+      ?.skip(skip)
+      ?.limit(+pageSize);
 
     const result = {
       properties,
