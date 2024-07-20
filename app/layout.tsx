@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
-import "@/assets/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { GlobalProvider } from "@/context/GlobalContext";
+import "react-toastify/dist/ReactToastify.css";
+import 'photoswipe/dist/photoswipe.css'
+import "@/assets/styles/globals.css";
 
 interface MainLayoutProps {
   children: ReactNode;
