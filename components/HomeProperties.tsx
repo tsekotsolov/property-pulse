@@ -9,8 +9,8 @@ const HomeProperties = async () => {
   const data = await fetchProperties();
 
   const randomProperties = data.properties
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+    ?.sort(() => Math.random() - 0.5)
+    ?.slice(0, 3);
   return (
     <>
       <section className="px-4 py-6">
